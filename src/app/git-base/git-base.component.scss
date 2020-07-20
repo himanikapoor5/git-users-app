@@ -1,0 +1,32 @@
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #3371FF;
+  padding: 20px;
+}
+
+.sort-item {
+  height: 35px;
+  width: 250px;
+  margin-right: 50px;
+}
+
+.search-item {
+  height: 35px;
+  width: 300px;
+  margin-left: 50px;
+}
+
+.base-area {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.results-container {
+  background-color: #F0F0F0;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

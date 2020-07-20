@@ -1,0 +1,19 @@
+<div class="result-view">
+  <div *ngIf="userData">
+    <div *ngIf="totalUsersCount" class="total-results">Total Results : {{ totalUsersCount }}</div>
+
+    <div *ngFor="let user of userData">
+      <app-user-card
+        [userData]="user"
+      ></app-user-card>
+    </div>
+
+    <div class="pagination">
+      <app-pagination
+        [totalPages]="totalPages"
+        (pageClick)="onPageClicked($event)"
+      ></app-pagination>
+    </div>
+  </div>
+</div>
+

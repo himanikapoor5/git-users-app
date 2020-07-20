@@ -1,0 +1,25 @@
+<div *ngIf="userData" class="user-card">
+  <div *ngIf="userData?.avatar_url" class="item-1">
+    <img [src]="userData?.avatar_url" alt="User Avatar" class="user-avatar">
+  </div>
+  <div *ngIf="userData?.login" class="item-2">
+    <div class="user-login">{{ userData?.login }}</div>
+    <div class="user-profile-url">Profile URL: {{ userData?.url }}</div>
+  </div>
+  <div class="item-3">
+    <button class="button" (click)="onBtnClick()">{{ isExpanded ? 'Collapse' : 'Details' }}</button>
+  </div>
+</div>
+<div *ngIf="isExpanded">
+  <div *ngIf="userRepoData?.length > 0">
+    <div *ngFor="let repo of userRepoData; let i = index; let odd = odd;">
+      <div [ngClass]="{'user-repo-data-odd': odd, 'user-repo-data-even': !odd}">
+        <div class="user-repo-data_empty"></div>
+        <div class="user-repo-data_repo" *ngIf="repo?.full_name">{{ repo?.full_name }}</div>
+        <div class="user-repo-data_language">{{ (repo?.language) ? (repo?.language) : '-' }}</div>
+        <div class="user-repo-data_empty"></div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="userRepoData?.length === 0" class="user-repo-data-even user-repo-data_empty_repo_text">No repositories found for user.</div>
+</div>

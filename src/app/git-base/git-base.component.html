@@ -1,0 +1,21 @@
+<div class="base-area">
+  <div class="search-container">
+    <div>
+      <input #sortUsersInput class="sort-item" list="sortUsers" name="sortUsers" placeholder="Sort By Name" autocomplete="off" (change)="onSortClicked($event)">
+      <datalist id="sortUsers">
+        <option value="Name (A - Z)">
+        <option value="Name (Z - A)">
+        <option value="Rank ↑">
+        <option value="Rank ↓">
+      </datalist>
+    </div>
+    <div>
+      <input class="search-item" type="text" placeholder="Search User.." name="search" (input)="onUserInputChanged($event.target.value)">
+    </div>
+  </div>
+
+  <div class="results-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

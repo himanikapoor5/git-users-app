@@ -1,0 +1,12 @@
+<span *ngIf="totalPages">
+  <a class="pagination-link" href="javascript: void(0)" (click)="onPageClick(firstPaginationNo)">
+    {{ firstPaginationNo }}</a>
+  <a *ngIf="(totalPages >= secPaginationNo)" class="pagination-link" href="javascript: void(0)" (click)="onPageClick(secPaginationNo)">
+    {{ secPaginationNo }}</a>
+  <a *ngIf="totalPages >= thirdPaginationNo" class="pagination-link" href="javascript: void(0)" (click)="onPageClick(thirdPaginationNo)">
+    {{ thirdPaginationNo }}</a>
+  <a *ngIf="totalPages >= 4" class="pagination-link" href="javascript: void(0)" (click)="onPageClick()">
+    .....</a>
+  <a *ngIf="totalPages >= 4" class="pagination-link" href="javascript: void(0)" (click)="onPageClick(totalPages)">
+    {{ totalPages }}</a>
+</span>
